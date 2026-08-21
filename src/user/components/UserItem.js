@@ -9,8 +9,7 @@ const UserItem = props => {
   // Check if image is already a full Cloudinary/external URL or a local path
   const imageSrc = props.image && props.image.startsWith('http')
     ? props.image
-    : `${(process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000').replace('/api', '')}/${props.image}`;
-
+    : `${process.env.REACT_APP_ASSET_URL || 'http://localhost:5000'}/${props.image}`;
   return (
     <li className="user-item">
       <Card className="user-item__content">
